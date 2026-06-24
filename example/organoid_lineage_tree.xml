@@ -12,10 +12,10 @@
   <!-- ============================================================ -->
   <!-- TRUNK A - ECTODERM (dual SMAD inhibition)                    -->
   <!-- ============================================================ -->
-  <intermediate name="Ectoderm / Neuroectoderm" exposure="Dual SMAD inhibition: SB431542/A83-01 (TGF-beta block) + LDN193189/Noggin/dorsomorphin (BMP block)">
+  <intermediate name="Ectoderm / Neuroectoderm" exposure="!!!PROBLEM!!! Dual SMAD inhibition: SB431542/A83-01 (TGF-beta block) + LDN193189/Noggin/dorsomorphin (BMP block)">
 
     <intermediate name="Anterior neuroectoderm (forebrain default)" exposure="Maintain dual SMAD inhibition; no caudalizing Wnt">
-      <organoid name="Cortical organoid (LBD model)" exposure="STEMdiff cortical kit (SMADi embedded)" reference="Tanaka et al., Sci Adv 2024, doi:10.1126/sciadv.adk3700"/>
+      <organoid name="Cortical organoid (LBD model)" exposure="STEMdiff cortical kit (SMADi embedded)" reference="Jin et al., Sci Adv 2024 (cortical organoids, SNCA-triplication Lewy body disease), doi:10.1126/sciadv.adk3700"/>
       <organoid name="Forebrain cerebral organoid" exposure="STEMdiff neural induction medium (SMADi embedded)" reference="Anastasaki et al., STAR Protoc 2022, doi:10.1016/j.xpro.2022.101173"/>
       <organoid name="Cortical organoid (oRG-enriched)" exposure="LDN193189 + SB431542 + XAV939" reference="Luongo &amp; Studer, STAR Protoc 2024, doi:10.1016/j.xpro.2024.103280"/>
     </intermediate>
@@ -30,7 +30,7 @@
     </intermediate>
 
     <intermediate name="Retinal neuroepithelium" exposure="SB431542 (+ SAG or LDN193189), then timed BMP4">
-      <organoid name="Retinal organoid (3D, SFEBq)" exposure="SB431542 + SAG, then BMP4" reference="Kuwahara et al., Commun Biol 2023, doi:10.1038/s42003-023-04543-5"/>
+      <organoid name="Retinal organoid (3D, SFEBq)" exposure="SB431542 + SAG, then BMP4" reference="Watari et al. (Kuwahara senior author), Commun Biol 6:164, 2023, doi:10.1038/s42003-023-04543-5"/>
       <organoid name="Retinal organoid (rapid 90-day)" exposure="SB431542 + LDN193189, then BMP4" reference="Matsushita et al., PLoS ONE 2024, doi:10.1371/journal.pone.0308743"/>
     </intermediate>
 
@@ -47,15 +47,15 @@
   <!-- ============================================================ -->
   <!-- TRUNK B - MESODERM (high Wnt / CHIR, no Activin)             -->
   <!-- ============================================================ -->
-  <intermediate name="Mesoderm / Primitive streak" exposure="High Wnt: CHIR99021 (no Activin A)">
+  <intermediate name="Mesoderm / Primitive streak" exposure="High Wnt: CHIR99021">
 
-    <intermediate name="Intermediate mesoderm (IM)" exposure="FGF9 + heparin (low/no BMP4)">
+    <intermediate name="Intermediate mesoderm (IM)" exposure="FGF8/FGF9/bFGF + heparin">
 
       <!-- Kidney / urogenital -->
       <organoid name="Kidney organoid" exposure="FGF9 + heparin (Takasato cascade)" reference="Takasato et al., Nat Protoc 2016, doi:10.1038/nprot.2016.098"/>
       <organoid name="Kidney organoid (ARPKD-on-chip)" exposure="FGF9 + heparin (Takasato/Morizane route)" reference="Hiratsuka et al., Sci Adv 2022, doi:10.1126/sciadv.abq0866"/>
-      <organoid name="Ureteric bud / collecting duct" exposure="FGF9, then GDNF + TTNPB + FGF10" reference="Vanslambrouck et al., STAR Protoc 2022, doi:10.1016/j.xpro.2022.101484"/>
-      <organoid name="Intermediate mesoderm cells" exposure="BMP4 (low) + CHIR99021" reference="Magro-Lopez et al., Front Cell Dev Biol 2024, doi:10.3389/fcell.2024.1395723"/>
+      <organoid name="Ureteric bud / collecting duct" exposure="FGF9, then GDNF + TTNPB" reference="Ryosaka, Mae &amp; Osafune, STAR Protoc 2022 (ureteric bud organoids), doi:10.1016/j.xpro.2022.101484"/>
+      
 
       <!-- Gonadal somatic (genital ridge) - shares CHIR->FG9+heparin with kidney -->
       <intermediate name="Bipotential gonad somatic (genital ridge: LHX9+/GATA4+/WT1+/NR5A1+)" exposure="FGF9 (200 ng/mL) + BMP4 (low, 10 ng/mL) + heparin">
@@ -64,14 +64,13 @@
       </intermediate>
 
       <!-- Mullerian / endometrial tract -->
-      <intermediate name="Coelomic epithelium" exposure="bFGF + RA (IM), then CHIR99021 + Noggin + PDGF-BB">
-        <intermediate name="Mullerian duct-like cells (PAX2+/ISL1+)" exposure="CHIR99021 + Noggin (PDGF-BB removed)">
-          <organoid name="Endometrial stromal fibroblasts (HOXA10+/PGR+); decidualization" exposure="5-aza-2'-deoxycytidine + CHIR99021 + 17beta-estradiol + FGF9 + PDGF-BB, then E2 + MPA + 8-Br-cAMP" reference="Miyazaki &amp; Bulun, Stem Cell Reports 2018, doi:10.1016/j.stemcr.2018.09.002"/>
-        </intermediate>
-        <organoid name="Mullerian duct-like cells -&gt; endometrial organoid (epithelial + stromal)" exposure="CHIR99021 (3 uM; WNT/beta-catenin -&gt; Mullerian vs mesonephric), then Matrigel 3D" reference="Gong &amp; Zou, npj Regen Med 2022, doi:10.1038/s41536-022-00263-2"/>
+      <intermediate name="Coelomic epithelium" exposure="bFGF + RA (IM), then CHIR99021">
+		<organoid name="Endometrial stromal fibroblasts (HOXA10+/PGR+); decidualization" exposure="5-aza-2'-deoxycytidine + CHIR99021 + 17beta-estradiol + FGF9 + PDGF-BB, then E2 + MPA + 8-Br-cAMP" reference="Miyazaki, Bulun et al., Stem Cell Reports 11(5):1136-1155, 2018, doi:10.1016/j.stemcr.2018.10.002"/>
+		<organoid name="Mullerian duct-like cells -&gt; endometrial organoid (epithelial + stromal)" exposure="CHIR99021 (3 uM; WNT/beta-catenin -&gt; Mullerian vs mesonephric), then Matrigel 3D" reference="Gong &amp; Zou, npj Regen Med 2022, doi:10.1038/s41536-022-00263-2"/>
       </intermediate>
 
     </intermediate>
+    <organoid name="Intermediate mesoderm cells" exposure="BMP4 (low) + CHIR99021" reference="Magro-Lopez et al., Front Cell Dev Biol 2024, doi:10.3389/fcell.2024.1395723"/>
 
     <intermediate name="Lateral plate / cardiac mesoderm" exposure="BMP4 + Activin A + CHIR99021">
       <organoid name="Cardioid (heart organoid)" exposure="Wnt inhibitor C59 (after BMP4 + Activin A + CHIR)" reference="Hofbauer et al., Cell 2021, doi:10.1016/j.cell.2021.04.034"/>
@@ -80,7 +79,6 @@
 
     <intermediate name="Hemogenic endothelium" exposure="BMP4 + VEGF, then SB431542">
       <organoid name="Bone marrow organoid (blood/marrow)" exposure="BMP4 + VEGF -&gt; HE" reference="Frenz-Wiessner et al., Nat Methods 2024, doi:10.1038/s41592-024-02172-2"/>
-      <organoid name="T cells via artificial thymic organoid (CAR-T)" exposure="DLL4 / Notch signaling (after HE)" reference="Wang et al., Cell Stem Cell 2022, doi:10.1016/j.stem.2022.02.009"/>
     </intermediate>
 
     <intermediate name="Paraxial mesoderm (via neuromesodermal progenitor)" exposure="CHIR99021 + LDN193189 (NMP)">
@@ -96,18 +94,20 @@
 
     <organoid name="Definitive endoderm spheroids (terminal)" exposure="Activin A only" reference="Bogacheva et al., Front Cell Dev Biol 2021, doi:10.3389/fcell.2021.726499"/>
 
-    <intermediate name="Anterior foregut endoderm" exposure="Dual SMAD inhibition (SB431542 + Noggin/dorsomorphin)">
+    <intermediate name="Non-hepatic lineages (lung, thyroid, trachea)" exposure="Dual SMAD inhibition (SB431542 + Noggin/dorsomorphin)">
       <organoid name="Lung / airway organoid (respiratory)" exposure="SB431542 + Noggin + CHIR + SAG + FGF4 (AFE), then FGF10" reference="Miller &amp; Spence, Nat Protoc 2019, doi:10.1038/s41596-018-0104-8"/>
-      <organoid name="Alveolus-on-chip" exposure="Dorsomorphin + SB (AFE), then BMP4 + CHIR + RA (vAFE), then KGF + FGF10" reference="Nawroth et al., Sci Adv 2023, doi:10.1126/sciadv.aea9874"/>
-      <organoid name="Airway organoid (ciliopathy)" exposure="Activin A + CHIR, then Noggin + SB (AFE), then FGF2 + EGF" reference="Yoshida et al., Sci Transl Med 2022, doi:10.1126/scitranslmed.abb1298"/>
+      <organoid name="Alveolus-on-chip" exposure="Dorsomorphin + SB (AFE), then BMP4 + CHIR + RA (vAFE), then KGF + FGF10" reference="Luk et al., Sci Adv 2026 (autologous iPSC alveolus-on-chip), doi:10.1126/sciadv.aea9874"/>
+      
+   </intermediate>
+   <intermediate name="Hepatic endoderm" exposure="????Need classification???" >
       <organoid name="Hepatic organoid (iHO)" exposure="FGF2 + BMP4, then HGF/OSM/Dex, then bile-acid/FXR" reference="Shimizu et al., Cell Rep 2025, doi:10.1016/j.celrep.2025.115675"/>
-      <organoid name="Liver organoid" exposure="Activin A + CHIR, then BMP7, then hepatic/differentiation medium" reference="Akbari et al., Sci Rep 2023, doi:10.1038/s41598-023-50250-w"/>
-      <organoid name="Fused liver buds" exposure="Activin A + Wnt3a, then BMP4 + FGF2, then HGF/OSM/Dex" reference="Tadokoro et al., Sci Transl Med 2023, doi:10.1126/scitranslmed.adg0338"/>
+      <organoid name="Liver organoid" exposure="Activin A + CHIR, then BMP7, then hepatic/differentiation medium" reference="Mun et al., Sci Rep 2023 (expandable liver organoids), doi:10.1038/s41598-023-50250-w"/>
+      <organoid name="Fused liver buds" exposure="Activin A + Wnt3a, then BMP4 + FGF2, then HGF/OSM/Dex" reference="Tadokoro et al., Sci Transl Med 2024, doi:10.1126/scitranslmed.adg0338"/>
       <organoid name="Multicellular liver organoid (HLO)" exposure="Activin A + BMP4, then CHIR + FGF4, then RA, then HGF/OSM/Dex" reference="Maepa et al., Bio-protocol 2024, doi:10.21769/BioProtoc.5042"/>
       <organoid name="Cholangiocyte / biliary organoid" exposure="Activin A + LY294002 + CHIR, then bFGF, then Notch + FGF10 + RA" reference="Budi et al., Front Cell Dev Biol 2024, doi:10.3389/fcell.2024.1361084"/>
       <organoid name="Pancreatic SC-beta cells" exposure="Activin A + CHIR -&gt; KGF -&gt; LDN + cyclopamine + RA -&gt; endocrine" reference="Pagliuca &amp; Melton, Cell 2014, doi:10.1016/j.cell.2014.09.040"/>
-      <organoid name="Pancreatic beta cells (expandable PP)" exposure="Activin A + Wnt3a -&gt; SANT-1 + RA + LDN -&gt; beta" reference="Zeng et al., Sci Adv 2022, doi:10.1126/sciadv.abk1826"/>
-      <organoid name="SC-islet" exposure="Activin A + CHIR -&gt; SANT-1 + RA + LDN -&gt; islet" reference="Rajaei et al., Sci Transl Med 2024, doi:10.1126/scitranslmed.adl4390"/>
+      <organoid name="Pancreatic beta cells (expandable PP)" exposure="Activin A + Wnt3a -&gt; SANT-1 + RA + LDN -&gt; beta" reference="Ma et al., Sci Adv 2022 (expandable pancreatic progenitor-derived beta cells), doi:10.1126/sciadv.abk1826"/>
+      <organoid name="SC-islet" exposure="Activin A + CHIR -&gt; SANT-1 + RA + LDN -&gt; islet" reference="Rajaei et al., Sci Transl Med 2025, doi:10.1126/scitranslmed.adl4390"/>
     </intermediate>
 
     <intermediate name="Mid/hindgut endoderm (CDX2+)" exposure="CHIR99021 + BMP4 + retinoic acid">
@@ -121,7 +121,7 @@
   <!-- ============================================================ -->
   <intermediate name="iMeLC (incipient mesoderm-like; T+/EOMES+, PGC-competent)" exposure="Activin A (50 ng/mL) + CHIR99021 (3 uM), 42-48 h">
     <intermediate name="hPGCLCs (SOX17+/BLIMP1+/TFAP2C+)" exposure="BMP4 (200 ng/mL) + LIF + SCF + EGF (floating embryoids)" reference="Sasaki &amp; Saitou, Cell Stem Cell 2015, doi:10.1016/j.stem.2015.06.014">
-      <organoid name="Oogonia in xenogeneic reconstituted ovaries (DAZL+/DDX4+/SYCP3+)" exposure="Co-aggregation with mouse E12.5 ovarian somatic cells; air-liquid interface, ~4 months" reference="Yamashiro &amp; Saitou, Science 2018, doi:10.1126/science.aat1674 (protocol: Nat Protoc 2020, doi:10.1038/s41596-020-0301-2)"/>
+      <organoid name="Oogonia in xenogeneic reconstituted ovaries (DAZL+/DDX4+/SYCP3+)" exposure="Co-aggregation with mouse E12.5 ovarian somatic cells; air-liquid interface, ~4 months" reference="Yamashiro &amp; Saitou, Science 2018, doi:10.1126/science.aat1674 (protocol: Yamashiro et al., Nat Protoc 15:1560-1583, 2020, doi:10.1038/s41596-020-0297-5)"/>
       <organoid name="Oogonia in all-human ovaroid" exposure="Co-aggregation with iPSC-derived granulosa-like cells (all-human niche); air-liquid interface" reference="Pierson Smela, Kramme &amp; Church, eLife 2023, doi:10.7554/eLife.83291"/>
     </intermediate>
   </intermediate>
@@ -129,20 +129,24 @@
   <!-- ============================================================ -->
   <!-- OUTLIERS - same tissue, divergent route (secondary tree)     -->
   <!-- ============================================================ -->
-<outliers>
+ <outliers name="Need classification">
   <!-- Strategy 1: minimal instruction / self-organizing -->
   <organoid name="Cerebral organoid (unguided whole-brain)" exposure="OUTLIER: no SMAD inhibition; pluripotency withdrawal + low-N2 medium + Matrigel + spinning bioreactor" outlier="true" reference="Lancaster &amp; Knoblich, Nat Protoc 2014, doi:10.1038/nprot.2014.158"/>
   <organoid name="Cortical organoid (simplified)" exposure="OUTLIER: spontaneous neural induction in NIM; no SB/LDN/CHIR/BMP" outlier="true" reference="Eigenhuis et al., Front Cell Neurosci 2023, doi:10.3389/fncel.2023.1114420"/>
   <organoid name="Integumentary organ system (skin + hair)" exposure="OUTLIER: clustered embryoid bodies + Wnt10b + in-vivo subrenal-capsule self-organization" outlier="true" reference="Takagi et al., Sci Adv 2016, doi:10.1126/sciadv.1500887"/>
   <organoid name="Renal tubular organoid" exposure="OUTLIER: single brief CHIR99021 (6 uM) pulse into maturation medium; no FGF9/heparin IM step" outlier="true" reference="Facioli et al., PLoS ONE 2021, doi:10.1371/journal.pone.0252156"/>
-  <organoid name="Vascular endothelium (arm of vascularized retinal organoid)" exposure="OUTLIER: direct VEGF-A + FGF2; no CHIR primitive-streak step (spontaneous mesoderm)" outlier="true" reference="Xie et al., Sci Adv 2024, doi:10.1126/sciadv.ady6410"/>
+  <organoid name="Vascular endothelium (arm of vascularized retinal organoid)" exposure="BMP4 (30 ng/mL) + CHIR99021 (12 µM) -> VEGF-A + FGF2" outlier="true" reference="Chen et al., Sci Adv 2025 (vascularized retinal organoids with microglia), doi:10.1126/sciadv.ady6410"/>
 
   <!-- Strategy 2: co-induce then segregate -->
   <organoid name="Cardio-pulmonary organoid (heart + lung)" exposure="OUTLIER: single CHIR99021 (7 uM) pulse co-induces mesoderm AND endoderm, then segregate" outlier="true" reference="Ng &amp; Ren, eLife 2022, doi:10.7554/eLife.67872"/>
 
   <!-- Strategy 3: overwrite fate with transcription factors (reproductive) / alt-ligand -->
   <organoid name="Granulosa-like cells -&gt; all-human ovaroid" exposure="OUTLIER: brief CHIR prime, then NR5A1 + RUNX1/RUNX2 transcription-factor overexpression (dox-inducible); bypasses FGF9/BMP4/PGD2 cascade" outlier="true" reference="Pierson Smela, Kramme &amp; Church, eLife 2023, doi:10.7554/eLife.83291"/>
-  <organoid name="Sertoli-like cells + tubules (DSD model)" exposure="OUTLIER: IM via growth factors (Activin/bFGF -&gt; BMP4 + RA + Activin), then NR5A1 + DMRT1 transcription-factor overexpression instead of PGD2/SOX9" outlier="true" reference="Pina-Aguilar &amp; Sekido, Sci Adv 2023, doi:10.1126/sciadv.abn9793"/>
-  <organoid name="Gonad / testicular somatic organoid (bioreactor)" exposure="OUTLIER (also hESC H1, not iPSC): Takasato-style IM base, then BMP4 + SHH (then hCG/PMSG); not the FGF9 + low-BMP4 -&gt; PGD2 consensus" outlier="true" reference="Pryzhkova &amp; Jordan, Tissue Eng Regen Med 2022, doi:10.1007/s13770-022-00492-y"/>
-</outliers>
+  <organoid name="Sertoli-like cells + tubules (DSD model)" exposure="OUTLIER: IM via growth factors (Activin/bFGF -&gt; BMP4 + RA + Activin), then NR5A1 + DMRT1 transcription-factor overexpression instead of PGD2/SOX9" outlier="true" reference="Gonen et al., Sci Adv 2023 (in vitro reprogramming to model gonad development / DSD), doi:10.1126/sciadv.abn9793"/>
+  <organoid name="Gonad / testicular somatic organoid (bioreactor)" exposure="OUTLIER (also hESC H1, not iPSC): Takasato-style IM base, then BMP4 + SHH (then hCG/PMSG); not the FGF9 + low-BMP4 -&gt; PGD2 consensus" outlier="true" reference="Pryzhkova, Boers &amp; Jordan, Tissue Eng Regen Med 2022, doi:10.1007/s13770-022-00492-y"/>
+  
+  
+  <organoid name="T cells via artificial thymic organoid (CAR-T)" exposure="DLL4 / Notch signaling (after HE)" reference="Wang et al., Cell Stem Cell 2022, doi:10.1016/j.stem.2022.02.009"/>
+   <organoid name="Airway organoid (ciliopathy)" exposure="Activin A + CHIR, then Noggin + SB (AFE), then FGF2 + EGF" reference="Sone et al., Sci Transl Med 2021 (ciliopathy airway-on-chip), doi:10.1126/scitranslmed.abb1298"/>
+ </outliers>
 </start>
