@@ -305,7 +305,7 @@ function arrayMapping(tagArray, impNodes, isAttributes) {
 function attrTrans(tagArray, isAttributes) {  // dealing with attributes of the objects
 	for (var i = 0; i < tagArray.length; i++) {
 		var tagString = tagArray[i].tag;
-		var nodeAttributes = tagString.split(" ");
+		var nodeAttributes = tagString.match(/(?:[^\s"]+|"[^"]*")+/g) || [];
 		tagArray[i].type = '';
 		tagArray[i].attr = [];
 		for (var j = 0; j < nodeAttributes.length; j++) {
@@ -369,7 +369,7 @@ function objToJSON(tagArray, id, parent) {
 function drawTree(selectString, treeData, maxDepth, maxWidth) {
 	var start = new Date().getTime();
 	var margin = {top: 20, right: 120, bottom: 20, left: 120},
-		width = maxWidth*400 - margin.right - margin.left,
+		width = maxWidth*600 - margin.right - margin.left,
 		height = maxDepth*100 - margin.top - margin.bottom;
 		
 	var i = 0,
@@ -420,7 +420,7 @@ function drawTree(selectString, treeData, maxDepth, maxWidth) {
 		links = tree.links(nodes);
 	
 	// Normalize for fixed-depth.
-	nodes.forEach(function(d) { d.y = d.depth * 300; });
+	nodes.forEach(function(d) { d.y = d.depth * 500; });
 	
 	// Update the nodes
 	var node = svg.selectAll("g.node")
